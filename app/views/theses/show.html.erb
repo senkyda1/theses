@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @thesis.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @thesis.abstract %>
+</p>
+
+<p>
+  <strong>Defended:</strong>
+  <%= @thesis.defended %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @thesis.faculty.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @thesis.person.name if @thesis.person.present? %>
+  <%= @thesis.person.surname if @thesis.person.present? %>
+  <% if !@thesis.person.present? %><em>Not assigned yet.</em><% end  %>
+</p>
+
+<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
+<%= link_to 'Back', theses_path %>
